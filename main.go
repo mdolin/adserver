@@ -16,11 +16,11 @@ func main() {
 	}
 	defer db.Close()
 
-	// Populate the database with sample AdUnits and Creatives
-	err = populateDB(db)
-	if err != nil {
-		log.Fatal(err)
-	}
+	// Uncoment to populate the database with sample AdUnits and Creatives
+	// err = populateDB(db)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
 
 	// Register the AdHandler and RefreshHandler with the HTTP server
 	http.HandleFunc("/adrequest", func(w http.ResponseWriter, r *http.Request) {
