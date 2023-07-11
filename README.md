@@ -35,10 +35,10 @@ The Ad Server is a simple server application that handles ad requests and select
 
 ### Endpoints
 
-- **POST /adrequest**:  
+- **/adrequest**:  
   Submit an ad request by sending a JSON payload in the request body. The payload should include the `ad_unit_id` and `user_id` fields. The server retrieves the specified ad unit, filters the available creatives, selects the most relevant one based on format, width, and height, and returns the selected creative's details as a JSON response.
 
-- **GET /refresh**:  
+- **/refresh**:  
   Trigger a cache refresh from the database. This endpoint updates the server's cache with the latest data for ad units and creatives. It is useful for updating the server's cache when changes are made to the database outside of normal ad requests.
 
 
@@ -81,7 +81,7 @@ The server will respond with a JSON containing the selected creative's details:
 {
   "creative_id": "<creative-id>",
   "content": "<creative-content>",
-  "price": <creative-price>,
+  "price": "<creative-price>",
   "user_id": "<user-id>"
 }
 ```
